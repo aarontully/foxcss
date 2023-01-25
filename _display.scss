@@ -1,0 +1,69 @@
+.d-grid {
+    display: grid;
+}
+
+$gridColumns: (
+    1,2,3,4,5,6,7,8,9,10,11,12
+);
+
+@each $cols in $gridColumns {
+    .col-#{$cols} {
+        grid-template-columns: repeat($cols, minmax(0, 1fr));
+    }
+
+    .col-span-#{$cols} {
+        grid-column-start: span $cols;
+    }
+}
+
+.d-flex {
+    display: flex;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.flex-grow {
+    flex-grow: 1;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-around {
+    justify-content: space-around;
+}
+
+.justify-evenly {
+    justify-content: space-evenly;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.align-start {
+    align-items: flex-start;
+}
+
+.align-end {
+    align-items: flex-end;
+}
+
+.align-baseline {
+    align-items: baseline;
+}
+
+.align-stretch {
+    align-items: stretch;
+}

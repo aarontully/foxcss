@@ -1,0 +1,68 @@
+.btn {
+    display: inline-flex;
+    padding: .6rem .8rem;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5;
+    background-color: transparent;
+    align-items: center;
+    justify-content: center;
+    outline: 0;
+    border: 0;
+    text-decoration: none;
+    border-radius: .5rem;
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+        cursor: pointer;
+        background-color: darken($light, 10%);
+    }
+}
+
+@each $color-name, $color-value in $theme-colors {
+    .btn-#{$color-name} {
+        color: $light;
+        background-color: $color-value;
+        @if $color-name == "light" or $color-name == "warning" or $color-name == "muted" {
+            color: $dark;
+        }
+
+        &:hover {
+            background-color: darken($color-value, 5%);
+        }
+
+        &:active {
+            background-color: darken($color-value, 6%);
+        }
+    }
+
+    .btn-outline-#{$color-name} {
+        border: 1px solid $color-value;
+        color: $color-value;
+
+        &:hover {
+            background-color: $color-value;
+            color: $light;
+            @if $color-name == "light" or $color-name == "warning" or $color-name == "muted" {
+                color: $dark;
+            }
+        }
+
+        &:active {
+            background-color: darken($color-value, 6%);
+        }
+    }
+}
+
+.btn-lg {
+    padding: .8rem 1rem;
+    font-size: 1.5rem;
+    border-radius: .5rem;
+}
+
+.btn-sm {
+    padding: .4rem .6rem;
+    font-size: .7rem;
+    border-radius: .5rem;
+}
